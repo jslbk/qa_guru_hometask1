@@ -5,11 +5,9 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SearchTest {
 
-    private static final String URL = "https://google.com/";
-
     @Test
     void successfulSearchTest() {
-        openChromeByURL(URL);
+        openChromeByURL("https://google.com/");
         $("[name=q]").setValue("selenide").pressEnter();
         $("[id=search]").shouldHave(text("https://selenide.org"));
     }
