@@ -4,10 +4,11 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SearchTest {
+    private static final String URL = "https://google.com/";
 
     @Test
     void successfulSearchTest() {
-        openChromeByURL("https://google.com/");
+        openChromeByURL(URL);
         $("[name=q]").setValue("selenide").pressEnter();
         $("[id=search]").shouldHave(text("https://selenide.org"));
     }
