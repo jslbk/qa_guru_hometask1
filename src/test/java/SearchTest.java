@@ -5,9 +5,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SearchTest {
 
+private static final HREF = "https://google.com/";
+
     @Test
     void successfulSearchTest() {
-        openChromeByURL("https://google.com/");
+        openChromeByURL(HREF);
         $("[name=q]").setValue("selenide").pressEnter();
         $("[id=search]").shouldHave(text("https://selenide.org"));
     }
